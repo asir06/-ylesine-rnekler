@@ -1,0 +1,46 @@
+package OylesineOrnekler;
+import javax.swing.*;
+public class UcgenCevreHsplama {
+
+	public static void main(String[] args) {
+		// Üçgen Çeşitlerini ve Üçgenin Çevresini Hesaplayan Program..
+		int cevre=0;
+		int kenarsayisi=0;
+		String a_Kenari=JOptionPane.showInputDialog(null,"A Kenarını Giriniz...");
+		String b_Kenari=JOptionPane.showInputDialog(null,"B Kenarını Giriniz...");
+		String c_Kenari=JOptionPane.showInputDialog(null,"C Kenarını Giriniz...");
+		int a=Integer.parseInt(a_Kenari);
+		int b=Integer.parseInt(b_Kenari);
+		int c=Integer.parseInt(c_Kenari);
+		String Sonuc=null;
+		cevre=a+b+c;
+		if(a==b)
+		{
+			kenarsayisi++;
+		}
+		if(a==c)
+		{
+			kenarsayisi++;
+		}
+		if(b==c)
+		{
+			kenarsayisi++;
+		}
+		if(kenarsayisi==0)
+		{
+			Sonuc="Çeşit Kenar Üçgen ";
+		}
+		else if(kenarsayisi==1)
+		{
+			Sonuc="İkiz Kenar Üçgen ";
+		}
+		else if(kenarsayisi==2)
+		{
+			Sonuc="Eş Kenar Üçgen ";
+		}
+		JOptionPane.showMessageDialog(null,kenarsayisi +"\n Üçgenin Tipi="+ Sonuc + "\n Üçgenin Çevresi = "+ Integer.toString(cevre));
+
+
+	}
+
+}
