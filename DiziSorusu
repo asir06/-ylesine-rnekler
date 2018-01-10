@@ -1,0 +1,55 @@
+package FinalCalisma;
+import javax.swing.JOptionPane;
+
+public class diziorn6
+{
+    public static void main(String[] args) 
+    {
+        // klavyeden girilen 10 adet sayı bir dizi değişkene alındı
+        // ekrana teker teker yazıldı, toplamı ve ortalaması alındı ve ekrana yazıldı
+        int toplam = 0;
+        int dizi[] = new int[10];  
+        for(int i=0; i<dizi.length; i++) 
+        {
+            dizi[i] = Integer.valueOf(JOptionPane.showInputDialog("Bir Sayı Girin" + (i+1)));
+            System.out.print(dizi[i] + " ");
+            toplam += dizi[i];
+        } 
+        System.out.println("Toplam:" + toplam);
+        System.out.println("Ortalama:" + (toplam/10));
+         
+        // Dizinin en küçük ve en büyük elemanlarını bulduk 
+        int max = dizi[0];
+        int min = dizi[0];
+         
+        for(int i=0; i<dizi.length; i++)
+        {
+            if(max < dizi[i])
+            {
+                max = dizi[i];
+            }
+             
+            if(min > dizi[i])
+            {
+                min = dizi[i];
+            }
+        }
+        System.out.println("En büyük sayı: " + max);
+        System.out.println("En küçük sayı: " + min);
+        
+         // Dizideki sayıların sıralaması yapıldı
+        for(int i=0; i<10; i++)
+		{
+			for(int j=i+1; j<10; j++)
+			{
+				if(dizi[i]>dizi[j])
+				{
+					int temp=dizi[j];
+					dizi[j]=dizi[i];
+					dizi[i]=temp;
+				}
+			}
+			System.out.print(" "+dizi[i]);
+		}
+        }
+}
